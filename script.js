@@ -62,11 +62,11 @@ console.log(distanzaDa19(25));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function dentroIntervallo(n) {
-if ((n >= 20 && n <= 100) || n === 400) {
-   return true;
-} else {
-   return false;
-}
+   if ((n >= 20 && n <= 100) || n === 400) {
+      return true;
+   } else {
+      return false;
+   }
 }
 
 console.log(dentroIntervallo(50));
@@ -81,11 +81,11 @@ console.log(dentroIntervallo(400));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function epify(testo) {
-    if (testo.startsWith("EPICODE")) {
-        return testo;
-    } else {
-        return "EPICODE " + testo;
-    }
+   if (testo.startsWith("EPICODE")) {
+      return testo;
+   } else {
+      return "EPICODE " + testo;
+   }
 }
 
 console.log(epify("Buongiorno"));
@@ -97,11 +97,11 @@ console.log(epify("EPICODE : Corso Full Stack"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function divisibilePer3o7(n) {
-    if (n > 0 && (n % 3 === 0 || n % 7 === 0)) {
-        return true;
-    } else {
-        return false;
-    }
+   if (n > 0 && (n % 3 === 0 || n % 7 === 0)) {
+      return true;
+   } else {
+      return false;
+   }
 }
 
 console.log(divisibilePer3o7(9));
@@ -117,14 +117,14 @@ console.log(divisibilePer3o7(41));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function invertiStringa(testo) {
-    let caratteri = testo.split("");
-    let invertita = "";
+   let caratteri = testo.split("");
+   let invertita = "";
 
-    for (let i = caratteri.length - 1; i >= 0; i--) {
-        invertita += caratteri[i];
-    }
+   for (let i = caratteri.length - 1; i >= 0; i--) {
+      invertita += caratteri[i];
+   }
 
-    return invertita;
+   return invertita;
 }
 
 console.log(invertiStringa("EPICODE"));
@@ -137,13 +137,13 @@ console.log(invertiStringa("EPICODE"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function inizialiMaiuscole(frase) {
-    let parole = frase.split(" ");
+   let parole = frase.split(" ");
 
-    for (let i = 0; i < parole.length; i++) {
-        parole[i] = parole[i].slice(0, 1).toUpperCase() + parole[i].slice(1);
-    }
+   for (let i = 0; i < parole.length; i++) {
+      parole[i] = parole[i].slice(0, 1).toUpperCase() + parole[i].slice(1);
+   }
 
-    return parole.join(" ");
+   return parole.join(" ");
 }
 
 console.log(inizialiMaiuscole("ciao mondo"));
@@ -155,7 +155,7 @@ console.log(inizialiMaiuscole("ciao mondo"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function togliPrimoEUltimo(testo) {
-    return testo.slice(1, -1);
+   return testo.slice(1, -1);
 }
 
 console.log(togliPrimoEUltimo("EPICODE"));
@@ -167,14 +167,14 @@ console.log(togliPrimoEUltimo("EPICODE"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function dammiCasuali(n) {
-    let numeri = [];
+   let numeri = [];
 
-    for (let i = 0; i < n; i++) {
-        let numero = Math.floor(Math.random() * 11);
-        numeri.push(numero);
-    }
+   for (let i = 0; i < n; i++) {
+      let numero = Math.floor(Math.random() * 11);
+      numeri.push(numero);
+   }
 
-    return numeri;
+   return numeri;
 }
 
 console.log(dammiCasuali(5));
@@ -190,3 +190,12 @@ console.log(dammiCasuali(5));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function etaInGiorni(annoNascita, meseNascita, giornoNascita) {
+   let oggi = new Date();
+   let nato = new Date(annoNascita, meseNascita - 1, giornoNascita);
+   let millisecondi;
+   millisecondi = oggi - nato;
+   let giorni = Math.floor(millisecondi / (1000 * 60 * 60 * 24));
+   return giorni;
+}
+console.log(`Hai ${etaInGiorni(2004, 12, 22)} giorni!`);
